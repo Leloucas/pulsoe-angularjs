@@ -1,0 +1,79 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="ibox">
+        <div class="ibox-title">
+            <h3>Describa sus datos personales</h3>
+        </div>
+    <div class="ibox-content">
+        <form name="vm.userDataForm" ng-submit="vm.saveUserData()">
+            <div class="form-group">
+                <label for="">Fecha de nacimiento*</label>
+                <input type="date" name="fechaNac" id="fechaNac" ng-model="vm.fechaNac" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="estadoCivil">Estado Civil*</label>
+                <select name="estadoCivil" id="estadoCivil" ng-model="vm.estadoCivil" class="form-control" required>
+                    <option value="soltero">Soltero(a)</option>
+                    <option value="casado">Casado(a)</option>
+                    <option value="divorciado">Divorciado(a)</option>
+                    <option value="viudo">Viudo(a)</option>
+                    <option value="unionlibre">Unión libre</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono </label>
+                <input type="number" name="telefono" id="telefono" ng-model="vm.telefono" class="form-control" required>
+                <label for="celular">Celular</label>
+                <input type="number" name="celular" id="celular" ng-model="vm.celular" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pais">País *</label>
+                <select ng-options="pais as pais for pais in vm.countries" name="pais" id="pais" ng-model="vm.pais" class="form-control" required>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado *</label>
+                <select name="estado" id="estado" ng-model="vm.estado" class="form-control" required>
+                    <option value="aguascalientes">Aguascalientes</option>
+                    <option value="otro">Otros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ciudad">Ciudad *</label>
+                <select name="ciudad" id="ciudad" ng-model="vm.ciudad" class="form-control" required>
+                    <option value="aguascalientes">Aguascalientes</option>
+                    <option value="otro">Otros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="zip">Código Postal</label>
+                <input type="number" name="zip" id="zip" ng-model="vm.zip" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="nacionalidad">Nacionalidad *</label>
+                <select name="nacionalidad" id="nacionalidad" ng-model="vm.pais" class="form-control" required>
+                    <option value="mexico">México</option>
+                    <option value="otro">Otros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="licenciaConducir">Licencia de conducir</label>
+                <input type="checkbox" name="licenciaConducir" id="licenciaConducir" ng-model="licenciaConducir" required>
+            </div>
+            <div class="form-group">
+                <label for="vehiculoPropio">¿Posee vehículo propio?</label>
+                <input type="checkbox" name="vehiculoPropio" id="vehiculoPropio" ng-model="vehiculoPropio" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="lat" id="lat" ng-model="vm.lat" ng-value="29.076990" class="form-control"> 
+                <input type="text" name="lng" id="lng" ng-model="vm.lng" ng-value="-110.941863" class="form-control">
+            </div>
+            <div class="row">
+                
+                <div class="col-md-2 col-md-offset-8">
+                    <button type="submit" class="btn btn-primary pull-right" ng-disabled="vm.userDataForm.$invalid">Guardar <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

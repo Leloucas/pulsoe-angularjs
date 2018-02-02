@@ -1,0 +1,29 @@
+<div class="col-md-6 col-md-offset-3">
+    <div class="ibox">
+        <div class="ibox-title">
+            <h3>Describa su perfil profesional</h3>
+        </div>
+        <div class="ibox-content">
+            <form name="vm.userProfesionalForm" ng-submit="vm.saveUserProfesional()">
+                <div class="form-group">
+                    <label for="titulo">Titulo*</label>
+                    <input type="text" ng-minlength="4" name="titulo" id="titulo" ng-model="vm.titulo" class="form-control" placeholder="" required>
+                    <div ng-show="vm.userProfesionalForm.titulo.$invalid && vm.userProfesionalForm.titulo.$touched">
+                        <p class="validation">El titulo debe contener más de 4 caracteres</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Describa su perfil profesional <small>(Entre 30 o 600 caracteres)</small>*</label> <span><small>{{vm.maxlenght - vm.descripcion.length}} restantes</small></span>
+                    <textarea name="descripcion" id="descripcion" ng-model="vm.descripcion" class="form-control" placeholder="" maxlength="{{vm.maxlenght}}" ng-trim="false" rows="3" required></textarea>
+                    <div ng-show="vm.userProfesionalForm.descripcion.$invalid && vm.userProfesionalForm.descripcion.$touched ||vm.userProfesionalForm.descripcion.$touched && vm.descripcion.length < 30">
+                        <p class="validation">Complete la descripción correctamente</p>
+                    </div>
+                </div>
+                
+
+                <button type="submit" class="btn btn-default" ng-disabled="vm.userProfesionalForm.$invalid || vm.descripcion.length < 30">Guardar</button>
+                
+            </form>
+        </div>
+    </div>
+</div>

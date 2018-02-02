@@ -1,0 +1,82 @@
+<div class="col-md-6 col-md-offset-3">
+    <div class="ibox">
+        <div ng-switch="vm.step">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="vm.stepWidth">
+                </div>
+            </div>
+            <div ng-switch-when="1">
+                <div class="">
+                    <div class="ibox-title">
+                        <h3>Datos</h3>
+                    </div>
+                    <div class="ibox-content">
+                        <ng-include src="'angular-app/dashboard-user/register/includes/userPerfilForm.html'" onload="finishLoading()"></ng-include>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="1">
+                <div class="">
+                    <div class="ibox-title">
+                        <h3>Formación</h3>
+                    </div>
+                    <div class="ibox-content">
+                        <ng-include src="'angular-app/dashboard-user/register/includes/userForForm.html'"></ng-include>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="1">
+                <div class="">
+                    <div class="ibox-title">
+                        <h3>Experiencia</h3>
+                    </div>
+                    <div class="ibox-content">
+                        <ng-include src="'angular-app/dashboard-user/register/includes/userExpForm.html'"></ng-include>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="1">
+                <div class="">
+                    <div class="ibox-title">
+                        <h3>Habilidades</h3>
+                    </div>
+                    <div class="ibox-content">
+                        <ng-include src="'angular-app/dashboard-user/register/includes/userHabForm.html'"></ng-include>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="1">
+                <div class="">
+                    <div class="ibox-title">
+                        <h3>Adicional</h3>
+                    </div>
+                    <div class="ibox-content">
+                        <ng-include src="'angular-app/dashboard-user/register/includes/userAddForm.html'"></ng-include>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="1">
+                <div class="ibox-title">
+                    <h3 class="text-center">¡Todo listo!</h3>
+                </div>
+                <div class="ibox-content">
+                    <p class="text-center">Vamos a revisar su perfil</p>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button class="btn btn-primary pull-left" ng-click="vm.previousStep()"><i class="fa fa-chevron-left" aria-hidden="true"></i> Volver al registro anterior</button>
+                        </div>
+                        
+                        <div class="col-md-2 col-md-offset-8">
+                            <a ng-href="#!/perfil" class="btn btn-default pull-right">Ver perfil <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-danger" ng-show="vm.error">
+                <div class="panel-heading">Error</div>
+                <div class="panel-body"><p>Hay un error en el formulario</p></div>
+            </div>
+        </div>
+    </div>
+</div>

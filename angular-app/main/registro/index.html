@@ -1,0 +1,73 @@
+<section class="white-padding">
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            
+            <h3>Pulso</h3>
+            <p>¡Bienvenido a nuestra red de trabajo!</p>
+            <div ng-show="!logged">
+                <hr>
+                <form class="m-t" name="vm.registerForm" ng-submit="vm.register()">
+                    <div class="form-group">
+                        <input type="text" id="nombre" name="nombre" ng-model="vm.nombre" pattern=".{5,}" class="form-control" placeholder="Nombre" required="">
+                    </div>
+                    <div ng-show="vm.registerForm.nombre.$invalid && vm.registerForm.nombre.$touched">
+                        <p class="validation">Inserte un nombre válido, más de 5 caracteres</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="apellido" name="apellido" ng-model="vm.apellido" pattern=".{5,}" class="form-control" placeholder="Nombre" required="">
+                    </div>
+                    <div ng-show="vm.registerForm.apellido.$invalid && vm.registerForm.apellido.$touched">
+                        <p class="validation">Inserte un apellido válido, más de 5 caracteres</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" ng-model="vm.email" class="form-control" placeholder="Correo electrónico" required="">
+                    </div>
+                    <div ng-show="vm.registerForm.email.$invalid && vm.registerForm.email.$touched">
+                        <p class="validation">Inserte un correo electrónico válido</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" ng-model="vm.password" pattern=".{6,}" class="form-control" placeholder="Crear Contraseña" required="">
+                    </div>
+                    <div ng-show="vm.registerForm.password.$invalid && vm.registerForm.password.$touched">
+                        <p class="validation">La contraseña debe ser de más de 6 caracteres</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="conditions" name="conditions" ng-model="vm.conditions" required><a href="#"> Términos y condiciones </a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" ng-disabled="vm.registerForm.$invalid">Registrarse</button>
+                </form>
+            </div>
+            <hr>
+            <p class="text-center"><small>¿Ya se encuentra registrado?</small></p>
+            <label for="logged" class="btn btn-default btn-block" ng-class="{active: logged}">
+                <input type="checkbox" id="logged" name="logged" ng-model="logged" class="hidden"> Inicie sesión
+            </label>
+            <div ng-show="logged">
+                <hr>
+                <form class="form" name="vm.userSubmit" id="login-nav" ng-submit="vm.login()">
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" ng-model="vm.logEmail" class="form-control" placeholder="Correo electrónico" required="">
+                        <div ng-show="vm.userSubmit.email.$invalid && vm.userSubmit.email.$touched">
+                            <p class="validation">Inserte un correo electrónico válido</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" ng-model="vm.logPassword" pattern=".{6,}" class="form-control" placeholder="Contraseña" required="">
+                        <div ng-show="vm.userSubmit.password.$invalid && vm.userSubmit.password.$touched">
+                            <p class="validation">La contraseña debe ser de más de 6 caracteres</p>
+                        </div>
+                        <div class="help-block text-center"><a href="">¿Olvidó su contraseña?</a></div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default btn-block" ng-disabled="vm.userSubmit.$invalid">Iniciar Sesi&oacute;n</button>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Recordar Usuario
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

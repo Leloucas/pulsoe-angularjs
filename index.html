@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="pulsoe" lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="icon" href="img/logo1.ico">
+        <!-- PageInfo -->
+        <meta name="description"
+            content="Bolsa de trabajo y recursos humanos en Hermosillo, Sonora, con
+            30 años de experiencia a su servicio nos ponemos en sus manos para brindarle la mejor opción de
+            búsqueda de personal en la región noroeste de la república">
+
+        <meta name="author" content="Sonnencode">
+        <meta name="keywords" content="recursos humanos,Hermosillo,Sonora,pulso,empresarial,sonnencode,outsourcing">
+        <meta name="robots" content="index,nofollow">
+        <meta name="googlebot" content="noarchive">
+
+        <!-- Open Graph data -->
+        <meta property="og:title" content=""/>
+        <meta property="og:type" content=""/>
+        <meta property="og:url" content=""/>
+        <meta property="og:image" content=""/>
+        <meta property="og:description" content=""/>
+
+        <title ng-bind-template="Pulso Empresarial - {{header}}">Pulso Empresarial</title>
+
+        <link rel="stylesheet"
+          href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="css/main/freelancer.min.css">
+        <link rel="stylesheet" href="css/main/styles.css">
+
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="angular-app/main/app.js"></script>
+    </head>
+    <body>
+        <ng-include src="'angular-app/main/includes/navbar.html'"></ng-include>
+        <main ng-view autoscroll="true"></main>
+        <ng-include src="'angular-app/main/includes/footer.html'"></ng-include>
+
+        <script src="js/main/freelancer.min.js"></script>
+        <script src="angular-app/main/pulsoe/index-controller.js"></script>
+        <script src="angular-app/main/contacto/contacto-controller.js"></script>
+        <script src="angular-app/main/nosotros/codigo-controller.js"></script>
+        <script src="angular-app/main/nosotros/compromiso-controller.js"></script>
+        <script src="angular-app/main/nosotros/principios-controller.js"></script>
+        <script src="angular-app/main/servicios/servicios-controller.js"></script>
+        <script src="angular-app/main/servicios/servicio-controller.js"></script>
+        <script src="angular-app/main/registro/registro-controller.js"></script>
+        <script src="angular-app/modal-show/modal-show-directive.js"></script>
+    </body>
+</html>

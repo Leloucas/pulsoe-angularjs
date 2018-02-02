@@ -1,0 +1,62 @@
+<div class="col-md-6 col-md-offset-3">
+<div class="ibox">
+    <div class="ibox-title">
+        <h3>Describa su experiencia profesional</h3>
+    </div>
+    <div class="ibox-content">
+        <form name="vm.userExperienciaForm" ng-submit="vm.saveUserExperiencia()">
+            <div class="form-group">
+                <label for="nombre">Nombre de la empresa *</label>
+                <input type="text" name="nombre" id="nombre" ng-model="vm.nombre" class="form-control"  required>
+            </div>
+            
+            <div class="form-group">
+                <label for="giro">Giro de la empresa *</label>
+                <input type="text" name="giro" id="giro" ng-model="vm.giro" class="form-control" placeholder="(Ejemplo: Administración, Construcción, Informática)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cargo">Cargo *</label>
+                <input type="text" name="cargo" id="cargo" ng-model="vm.cargo" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="area">Área *</label>
+                <input type="text" name="area" id="area" ng-model="vm.area" class="form-control" placeholder="(Relacionado al giro de la empresa)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="feInicio">Fecha de inicio *</label>
+                <input type="date" name="feInicio" id="feInicio" ng-model="vm.feInicio" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="feFinal">Fecha de salida *</label>
+                <input type="date" name="feFinal" id="feFinal" ng-model="vm.feFinal" class="form-control" ng-readonly="vm.actual" >
+
+                <input type="checkbox" name="actual" id="actual" ng-model="vm.actual" > 
+                <label for="actual"><small>(Marque esta casilla si es su trabajo actual)</small></label>
+                
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción del trabajo desempeñado *</label> <span><small>{{vm.maxlenght - vm.expDesc.length}} restantes</small></span>
+                <textarea name="descripcion" id="descripcion" ng-model="vm.expDesc" class="form-control" placeholder="(Entre 30 o 600 caracteres)" maxlength="{{vm.maxlenght}}" ng-trim="false" rows="3" required></textarea>
+                <div ng-show="vm.userExperienciaForm.expDesc.$invalid && vm.userExperienciaForm.expDesc.$touched ||vm.userExperienciaForm.expDesc.$touched && vm.expDesc.length < 30">
+                    <p class="validation">Complete la descripción correctamente</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-md-offset-10">
+                    <button type="submit" class="btn btn-success pull-right" ng-disabled="vm.userExperienciaForm.$invalid">Actualizar <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            
+        </form>
+        <ul class="list-inline">
+            <li ng-repeat="exp in vm.experiencias"></li>
+        </ul>
+    </div>
+</div>
+</div>

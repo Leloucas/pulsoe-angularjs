@@ -1,0 +1,62 @@
+<!--@if(auth()->check())
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            {{auth()->user()->email}}
+            <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="/home">Panel de usuario</a></li>
+            <li class="divider"></li>
+            @if(auth()->user()->isAdmin)
+
+            <li><a href="{{url('/panel')}}">Panel de administración</a></li>
+            <li class="divider"></li>
+
+            @endif
+            <li><a href="{{url('/perfil')}}">Perfil</a></li>
+            <li><a href="{{url('/logout')}}">Salir</a></li>
+        </ul>
+    </li>
+@else-->
+    <!--<li class="dropdown nav-title">-->
+        <a class="nav-title dropdown-toggle" data-toggle="dropdown"><b>Iniciar sesión</b> <span class="caret"></span></a>
+        <ul id="login-dp" class="dropdown-menu">
+            <li>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="text-center">Introduzca sus datos</h5>
+                        <!--<div class="social-buttons">
+                            <h5 class="text-center">Iniciar sesión con</h5>
+                            <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                            <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                        </div>-->
+                        <br>
+                        <form class="form" name="vm.userSubmit" id="login-nav" ng-submit="vm.login()">
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">Correo electrónico</label>
+                                <input name="email" type="email" class="form-control" id="exampleInputEmail2"
+                                       placeholder="Email " required="">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
+                                <input name="password" type="password" class="form-control" id="exampleInputPassword2"
+                                       placeholder="Password" required="">
+                                <div class="help-block text-right"><a href="">¿Olvidó su contraseña?</a></div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-default btn-block">Iniciar Sesi&oacute;n</button>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Recordar Usuario
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="bottom text-center">
+                        Unete a nuestra red de trabajo <a ng-href="#!/registro"><b> Aqui</b></a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    <!--</li>-->
+<!--@endif-->
